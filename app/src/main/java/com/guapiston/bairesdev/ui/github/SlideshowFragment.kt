@@ -1,4 +1,4 @@
-package com.guapiston.bairesdev.ui.slideshow
+package com.guapiston.bairesdev.ui.github
 
 import android.os.Bundle
 import android.view.LayoutInflater

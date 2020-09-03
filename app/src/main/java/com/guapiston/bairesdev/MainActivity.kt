@@ -15,6 +15,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import com.guapiston.bairesdev.ui.buttons.ButtonsFragment
+import com.guapiston.bairesdev.ui.github.GithubFragment
 import com.guapiston.bairesdev.ui.google.GoogleFragment
 
 class MainActivity : AppCompatActivity() , NavigationView.OnNavigationItemSelectedListener{
@@ -34,26 +35,23 @@ class MainActivity : AppCompatActivity() , NavigationView.OnNavigationItemSelect
 
         val navigationView = findViewById<NavigationView>(R.id.nav_view)
         navigationView.setNavigationItemSelectedListener(this)
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        menuInflater.inflate(R.menu.main, menu)
-        return true
+        navigationView.setCheckedItem(R.id.nav_google)
+        lauchGoogleFragment()
     }
 
     private fun launchButtonsFragment(){
         val fragment = ButtonsFragment.newInstance()
-        supportFragmentManager.beginTransaction().replace(R.id.fragment_container,fragment,"tag").commit()
+        supportFragmentManager.beginTransaction().replace(R.id.fragment_container,fragment,"buttonsFragment").commit()
     }
 
     private fun launchGithubFragment(){
-
+        val fragment = GithubFragment.instance
+        supportFragmentManager.beginTransaction().replace(R.id.fragment_container,fragment,"githubFragment").commit()
     }
 
     fun lauchGoogleFragment(url : String = "https://www.google.com/"){
         val fragment = GoogleFragment.newInstance(url)
-        supportFragmentManager.beginTransaction().replace(R.id.fragment_container,fragment,"tag").commit()
+        supportFragmentManager.beginTransaction().replace(R.id.fragment_container,fragment,"googleFragment").commit()
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {

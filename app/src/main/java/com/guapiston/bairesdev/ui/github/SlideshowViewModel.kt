@@ -1,4 +1,4 @@
-package com.guapiston.bairesdev.ui.slideshow
+package com.guapiston.bairesdev.ui.github
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity() , NavigationView.OnNavigationItemSelect
     }
 
     private fun launchButtonsFragment(){
-        val fragment = ButtonsFragment.newInstance()
+        val fragment = ButtonsFragment.instance
         supportFragmentManager.beginTransaction().replace(R.id.fragment_container,fragment,"buttonsFragment").commit()
     }
 

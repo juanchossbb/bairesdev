@@ -45,10 +45,6 @@ class ButtonsFragment : Fragment(){
     }
 
     companion object{
-        var instance : ButtonsFragment? = null
-        fun newInstance() : ButtonsFragment{
-            if (instance == null) instance = ButtonsFragment()
-            return instance!!
-        }
+        var instance = ButtonsFragment()
     }
 }

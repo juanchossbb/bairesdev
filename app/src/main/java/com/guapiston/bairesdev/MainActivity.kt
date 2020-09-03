@@ -14,11 +14,11 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
+import com.guapiston.bairesdev.ui.buttons.ButtonsFragment
 import com.guapiston.bairesdev.ui.google.GoogleFragment
 
 class MainActivity : AppCompatActivity() , NavigationView.OnNavigationItemSelectedListener{
 
-    private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var drawerLayout: DrawerLayout
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -43,7 +43,8 @@ class MainActivity : AppCompatActivity() , NavigationView.OnNavigationItemSelect
     }
 
     private fun launchButtonsFragment(){
-
+        val fragment = ButtonsFragment.newInstance()
+        supportFragmentManager.beginTransaction().replace(R.id.fragment_container,fragment,"tag").commit()
     }
 
     private fun launchGithubFragment(){
